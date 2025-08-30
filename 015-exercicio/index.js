@@ -4,27 +4,32 @@
 
 
 
-function calcularIdadeCompleto(diaAtual, mesAtual, anoAtual,diaNascimento,mesNascimento,anoNascimento){
+function calcularIdadeCompleto(diaAtual, mesAtual, anoAtual,diaNascimento,mesDeNascimento,anoNascimento){
 
-    let diaDeVida = diaAtual;
+    let diasDeVida = diaAtual;
     let mesDeVida = mesAtual;
-    let anoDeVida = anoNascimento;
+    let anosDeVida = anoAtual;
 
-    if(diaDeVida < diaNascimento){
+    if(diasDeVida < mesDeVida){
         mesDeVida = mesDeVida - 1;
-        diaDeVida = diaDeVida + 30;
+        diasDeVida = diasDeVida + 30;
     }
-    diaDeVida = diaDeVida - diaNascimento;
+    diasDeVida = diasDeVida - diaNascimento;
 
-    if(anoDeVida < mesNascimento){
-        anoDeVida = anoDeVida - 1;
-        mesNascimento = mesNascimento + 12
+    if(anosDeVida < mesDeVida){
+        anosDeVida = anosDeVida - 1;
+        mesDeVida = mesDeVida + 12;
     }
-    mesNascimento = mesNascimento - anoNascimento;
+    mesDeVida = mesDeVida -mesDeNascimento;
+
+    anosDeVida = anosDeVida - anoNascimento;
+
+    return `${anosDeVida} anos, ${mesDeVida} meses e ${diasDeVida} dias!`
+
 }
+ let resultado = calcularIdadeCompleto(30,8,2025,16,7,1991);
+ console.log(resultado);
 
-
-console.log(`${} anos, ${} meses e ${} dias!`);
 
 
 
